@@ -128,7 +128,7 @@ def login():
             mobile = int(input('Enter the pin number of recepient: '))
             if mobile in mobile_link.keys():
                 secondary = mobile_link[mobile]             # use mobile no. to get acct. no.
-                customer_details[account_number].payment(customer_details[secondary])
+                customer_details[account_number].transfer(customer_details[secondary])
             else:
                 print('The mobile number you have enter does not have an account associated with it')
         elif user_input1 == '4':
