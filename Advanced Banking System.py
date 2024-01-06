@@ -145,7 +145,8 @@ while True:
                         Press 1 for creating a new customer:
                         Press 2 for logging in as an existing customer:
                         Press 3 for displaying number of customers:
-                        Press 4 for exit\n''')
+                        Press 4 for exit
+                        ''')
 
     if user_input1 == '1':
         print("Create user")
