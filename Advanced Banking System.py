@@ -123,7 +123,7 @@ def login():
         if user_input1 == '1':
             customer_details[account_number].deposit()
         elif user_input1 == '2':
-            customer_details[account_number].withdrawl()
+            customer_details[account_number].withdraw()
         elif user_input1 == '3':
             mobile = int(input('Enter the pin number of recepient: '))
             if mobile in mobile_link.keys():
