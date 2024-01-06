@@ -55,7 +55,7 @@ class BankAccount():
             other.account_balance = other.account_balance + amount
             print(f"Transaction Successfully Completed!")
             print(f"The account balance has been upadted")
-            print(f"Current Balance of {customer1.name} : {self.account_balance}")
+            print(f"Current Balance of {self.name}: {self.account_balance}")
         else:
             print(f"Transaction Failed!")
             print(f"Insuffient Funds | Current Balance: {self.account_balance}")
@@ -83,8 +83,8 @@ customer_details = {}                 # use account no. as key and class object 
 mobile_link = {}                      # use mobile no. as key and store account no. as value, for linking purpose
 def new_customer():
     name = input('Enter the name of customer: ')
-    mobile_number = int(input("Mobile Number must be of 6 digits. Enter mobile number: "))
-    if len(mobile_number) != 6:
+    phone_number = int(input("Mobile Number must be of 6 digits. Enter mobile number: "))
+    if len(str(phone_number)) != 6:
         print('Invalid Number')
         return
     age = int(input("Enter the age: "))
@@ -94,14 +94,14 @@ def new_customer():
         print('Invalid Amount')
         return
     pin = int(input('Pin must be of 3 digits. Create PIN: '))
-    if len(pin) != 3:
+    if len(str(pin)) != 3:
         print('Invalid Pin')
         return
     
-    customer = BankAccount(name=name, phone_number=mobile_number, age=age, gender=gender, pin = pin, initial_deposit = initial_deposit)
+    customer = BankAccount(name=name, phone_number=phone_number, age=age, gender=gender, pin = pin, initial_deposit = initial_deposit)
     customer_details[customer.customer_account_number] = customer                   # account. no. stored as key and oject as value
     mobile_link[customer.phone_number] = customer.customer_account_number           # mobile number linked
-    print('New User Created!')
+    print("\t\t\t New User Created! ")
     print(f'Welcome {customer.name} to Bank. {customer.customer_account_number} is your account number')
 
 def login():
@@ -114,24 +114,24 @@ def login():
         print('Account either not exist or the pin is wrong')
         return
     while True:
-        user_input1 = input('''
+        user_input = input('''
                             Press 1 for deposit:
                             Press 2 for withdrawl:
                             Press 3 for money transfer:
                             Press 4 to log out
                             ''')
-        if user_input1 == '1':
+        if user_input == '1':
             customer_details[account_number].deposit()
-        elif user_input1 == '2':
+        elif user_input == '2':
             customer_details[account_number].withdraw()
-        elif user_input1 == '3':
-            mobile = int(input('Enter the pin number of recepient: '))
+        elif user_input == '3':
+            mobile = int(input('Enter the mobile number of recepient: '))
             if mobile in mobile_link.keys():
-                secondary = mobile_link[mobile]             # use mobile no. to get acct. no.
+                secondary = mobile_link[mobile]             # use mobile no. to get account details.
                 customer_details[account_number].transfer(customer_details[secondary])
             else:
                 print('The mobile number you have enter does not have an account associated with it')
-        elif user_input1 == '4':
+        elif user_input == '4':
             print('Logged Out')
             return
         else:
@@ -141,23 +141,22 @@ def login():
 
 
 while True:
-    user_input1 = input('''
+    user_input = input('''
                         Press 1 for creating a new customer:
                         Press 2 for logging in as an existing customer:
                         Press 3 for displaying number of customers:
                         Press 4 for exit
                         ''')
 
-    if user_input1 == '1':
+    if user_input == '1':
         print("Create user")
         new_customer()
-    elif user_input1 == '2':
+    elif user_input == '2':
         login()
-    elif user_input1 == '3':
+    elif user_input == '3':
         print(f"There currently {BankAccount.number_of_customers} customers in bank.")
-    elif user_input1 == '4':
+    elif user_input == '4':
         print('Exited')
         break
     else:
         print('Invalid input try again')
-    print('\n*************************************************************\n')
