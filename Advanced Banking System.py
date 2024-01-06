@@ -61,8 +61,8 @@ class BankAccount():
             print(f"Insuffient Funds | Current Balance: {self.account_balance}")
             
 
-customer1 = BankAccount(name="Abhinav Gera",phone_number = 9876543210,age = 21,gender="Male",pin=1234,initial_deposit=1000)
-customer2 = BankAccount(name="Arun Gera",phone_number = 9876543211,age = 29,gender="Male",pin=5678,initial_deposit=3000)
+#customer1 = BankAccount(name="Abhinav Gera",phone_number = 9876543210,age = 21,gender="Male",pin=1234,initial_deposit=1000)
+#customer2 = BankAccount(name="Arun Gera",phone_number = 9876543211,age = 29,gender="Male",pin=5678,initial_deposit=3000)
 
 # print(f"Number of customers: {BankAccount.number_of_customers}")
 
