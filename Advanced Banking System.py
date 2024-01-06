@@ -154,7 +154,7 @@ while True:
     elif user_input1 == '2':
         login()
     elif user_input1 == '3':
-        print(f"There currently {BankAccount.number_of_customers} customers in Corporate bank.")
+        print(f"There currently {BankAccount.number_of_customers} customers in bank.")
     elif user_input1 == '4':
         print('Exited')
         break
