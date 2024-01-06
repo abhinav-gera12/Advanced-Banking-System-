@@ -84,7 +84,7 @@ mobile_link = {}                      # use mobile no. as key and store account 
 def new_customer():
     name = input('Enter the name of customer: ')
     mobile_number = int(input("Mobile Number must be of 6 digits. Enter mobile number: "))
-    if mobile_number != 6:
+    if len(mobile_number) != 6:
         print('Invalid Number')
         return
     age = int(input("Enter the age: "))
@@ -94,7 +94,7 @@ def new_customer():
         print('Invalid Amount')
         return
     pin = int(input('Pin must be of 3 digits. Create PIN: '))
-    if pin != 3:
+    if len(pin) != 3:
         print('Invalid Pin')
         return
     
