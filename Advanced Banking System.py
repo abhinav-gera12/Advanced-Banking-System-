@@ -156,7 +156,8 @@ while True:
     elif user_input == '3':
         print(f"There currently {BankAccount.number_of_customers} customers in bank.")
     elif user_input == '4':
-        print('Exited')
+        print('\t\t Thank You for using the code.')
+        print("\t\t © Abhinav Gera \n\n")
         break
     else:
         print('Invalid input try again')
