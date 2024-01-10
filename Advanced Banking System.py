@@ -101,8 +101,8 @@ def new_customer():
     customer = BankAccount(name=name, phone_number=phone_number, age=age, gender=gender, pin = pin, initial_deposit = initial_deposit)
     customer_details[customer.customer_account_number] = customer                   # account. no. stored as key and oject as value
     mobile_link[customer.phone_number] = customer.customer_account_number           # mobile number linked
-    print("\t\t\t New User Created! ")
-    print(f'Welcome {customer.name} to Bank. {customer.customer_account_number} is your account number')
+    print("\n\t\t\t New User Created! ")
+    print(f'\tWelcome {customer.name} to Bank. {customer.customer_account_number} is your account number\n')
 
 def login():
     account_number = int(input('Enter your Account Number: '))
