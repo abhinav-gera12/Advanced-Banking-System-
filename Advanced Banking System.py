@@ -2,10 +2,10 @@
 Creating a virtual bank system which holds the information of a customer account details
 if a customer wants to deposit, withdrawal, transfer the funds then the customer can do it easily while inputing the infromation
 '''
-
+import random                                                       # importing random module for account numbers
 class BankAccount():
     number_of_customers = 0                                         #it tracks the number of customers who opened the account
-    account_number = 12345                                          #it provides the account number to that particular customer who opened the account
+    account_number = random.randint(10000,100000)                   #it provides the random account number to that particular customer who opened the account
     
     def __init__(self,name,phone_number,age,gender,pin,initial_deposit):       #constructor with the main parameters
         self.name = name                                            #name of the customer
